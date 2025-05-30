@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UbiSoft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <h1 style="text-align:center; padding-top:2em;">Launching...</h1>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+
+    // Delay redirect to give time for PWA registration
+    setTimeout(() => {
+      window.location.href = "https://store.ubi.com";
+    }, 3000); // 3 second delay
+  </script>
+</body>
+</html>
